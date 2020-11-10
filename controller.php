@@ -7,8 +7,9 @@ if (!isset($_POST['page'])) {  // When no page is sent from the client; The init
     include('index.php');
     exit();
 }
-session_start();
 
+
+session_start();
 
 if($_POST['page'] == 'IndexPage') {
     $command = $_POST['command'];
@@ -33,6 +34,7 @@ if($_POST['page'] == 'IndexPage') {
             } else {
                 $_SESSION['SignIn'] = 'Yes';
                 $_SESSION['username'] = $_POST['username'];
+                $_SESSION['userID'] = get_user_id($_POST['username']);
                 include('mainpage.php');
             }
         break;
@@ -40,12 +42,17 @@ if($_POST['page'] == 'IndexPage') {
 }  else if($_POST['page'] == 'MainPage') {
     $command = $_POST['command'];
 
-} else if($_POST['page'] == 'Profile') {
-
-    if (!isset($_SESSION['SignIn'])) {
-        $display_type = 'none';
-        include('index.php');
-        exit();
+    switch($command) {
+        case 'SignOut':
+            sign_out();
+            include('index.php');
+        break;
+        case 'AddMeal':
+            $mealName = $_POST['meal'];
+            $calories = $_POST['calories'];
+            add_meal($_SESSION['userID'], $mealName,$calories);
+            include('mainpage.php');
+        break;
     }
 
 } else if($_POST['page'] == 'ProfilePage') {
@@ -53,8 +60,7 @@ if($_POST['page'] == 'IndexPage') {
 
     switch($command) {
         case 'SignOut':
-            session_unset();
-            session_destroy();
+            sign_out();
             include('index.php');
     }
 }

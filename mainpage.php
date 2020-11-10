@@ -25,7 +25,7 @@ if (!isset($_SESSION['SignIn'])) {
 <body>
 <!-- Header -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">FitTracker Main</a>
+    <a class="navbar-brand" href="index.php">FitTracker Main</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -36,16 +36,29 @@ if (!isset($_SESSION['SignIn'])) {
             <li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>
             <li class="nav-item"><a class="nav-link" href="controller.php" id="logoutProfile">
                     <form style="display: inline-block" action="controller.php" method="post">
-                        <input type='hidden' name='page' value='ProfilePage'>
+                        <input type='hidden' name='page' value='MainPage'>
                         <input type='hidden' name='command' value='SignOut'>
                     </form>
-                    Logout</a>
-            </li>
+                    Logout</a></li>
         </ul>
     </div>
 </nav>
 
+<form action="controller.php" method="post" class="form-horizontal" style="margin: 0.8vh auto; border: 0.6vh solid black; width: 40%; text-align: center;">
 
+    <input type="hidden" name="page" value="MainPage">
+    <input type="hidden" name="command" value="AddMeal">
+
+    <div style="margin: 1vh 0.5vh;">
+        <input type="text" placeholder="Enter Meal Name" name="meal" aria-label="Enter Meal Name">
+    </div>
+
+    <div style="margin: 1vh 0.5vh;text-align: center;">
+            <input type="text" placeholder="Enter Calories" name="calories" aria-label="Enter Calories">
+    </div>
+
+    <button type="submit" class="btn btn-danger" style="margin: 1vh auto;">Submit</button>
+</form>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
