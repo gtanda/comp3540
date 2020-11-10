@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (!isset($_SESSION['SignIn'])) {
     include('index.php');
     exit();
@@ -24,22 +25,28 @@ if (!isset($_SESSION['SignIn'])) {
 <body>
 <!-- Header -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.php">FitTracker Main</a>
+    <a class="navbar-brand" href="#">FitTracker Main</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link">Profile</a></li>
-                <li class="nav-item"><a class="nav-link">Logout</a></li>
-            </ul>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>
+            <li class="nav-item"><a class="nav-link" href="controller.php" id="logoutProfile">
+                    <form style="display: inline-block" action="controller.php" method="post">
+                        <input type='hidden' name='page' value='ProfilePage'>
+                        <input type='hidden' name='command' value='SignOut'>
+                    </form>
+                    Logout</a>
+            </li>
+        </ul>
     </div>
 </nav>
 
+<h1>Hello <?php echo $_SESSION['username']; ?></h1>
 
-<hr>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -48,7 +55,3 @@ if (!isset($_SESSION['SignIn'])) {
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
 </body>
-
-<script>
-
-</script>

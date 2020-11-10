@@ -7,8 +7,8 @@ if (!isset($_POST['page'])) {  // When no page is sent from the client; The init
     include('index.php');
     exit();
 }
-
 session_start();
+
 
 if($_POST['page'] == 'IndexPage') {
     $command = $_POST['command'];
@@ -38,12 +38,6 @@ if($_POST['page'] == 'IndexPage') {
         break;
     }
 }  else if($_POST['page'] == 'MainPage') {
-    if (!isset($_SESSION['SignIn'])) {
-        $display_type = 'none';
-        include('index.php');
-        exit();
-    }
-
     $command = $_POST['command'];
 
 } else if($_POST['page'] == 'Profile') {
@@ -54,5 +48,14 @@ if($_POST['page'] == 'IndexPage') {
         exit();
     }
 
+} else if($_POST['page'] == 'ProfilePage') {
+    $command = $_POST['command'];
+
+    switch($command) {
+        case 'SignOut':
+            session_unset();
+            session_destroy();
+            include('index.php');
+    }
 }
 

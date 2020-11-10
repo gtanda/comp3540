@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01be4ac6-64cb-4c08-8bcc-2796b17e979c" name="Default Changelist" comment="" />
+    <list default="true" id="01be4ac6-64cb-4c08-8bcc-2796b17e979c" name="Default Changelist" comment="Fixed page routing by using session_start, added functionality to log user out">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage.php" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,9 +35,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/COMP 3540/Week8" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.selected.configurable" value="SQL Dialects" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -61,26 +68,45 @@
       <workItem from="1603834214878" duration="6939000" />
       <workItem from="1604442292022" duration="17950000" />
       <workItem from="1604518502253" duration="2751000" />
-      <workItem from="1604787569503" duration="14259000" />
+      <workItem from="1604787569503" duration="14399000" />
+      <workItem from="1604963670563" duration="6000" />
+      <workItem from="1604968572488" duration="2475000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit, finished login, signup so far">
+      <created>1604802264679</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604802264680</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit, finished login, signup so far" />
+    <MESSAGE value="Fixed page routing by using session_start, added functionality to log user out" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed page routing by using session_start, added functionality to log user out" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="1700" y="458" key="FileChooserDialogImpl" timestamp="1604802235056">
+    <state x="1700" y="458" key="FileChooserDialogImpl" timestamp="1604969961474">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1700" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1604802235056" />
+    <state x="1700" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1604969961474" />
     <state x="474" y="277" key="NewPhpFileDialog" timestamp="1604796749468">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="474" y="277" key="NewPhpFileDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1604796749468" />
-    <state x="141" y="0" key="SettingsEditor" timestamp="1603839119542">
+    <state x="829" y="70" key="SettingsEditor" timestamp="1604971071377">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="141" y="0" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1603839119542" />
+    <state x="829" y="70" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1604971071377" />
+    <state x="1511" y="436" key="Vcs.Push.Dialog.v2" timestamp="1604802313710">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1511" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1604802313710" />
     <state x="-7" y="700" width="1290" height="707" key="dock-window-1" timestamp="1603242545787">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
