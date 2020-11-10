@@ -45,7 +45,6 @@ if (!isset($_SESSION['SignIn'])) {
     </div>
 </nav>
 
-<h1>Hello <?php echo $_SESSION['username']; ?></h1>
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

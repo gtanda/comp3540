@@ -1,18 +1,19 @@
 <?php
 require_once ('db.php');
 
+// Index
 function join_user($username, $password, $email) {
     global $conn;
 
     $date = date('Y/m/d');
-    $query = "INSERT INTO User values(NULL, '$username', '$password', '$email', '$date')";
+    $query = "INSERT INTO user_project values(NULL, '$username', '$password', '$email', '$date')";
     return mysqli_query($conn,$query);
 }
 
 function username_taken($username) {
     global $conn;
 
-    $query = "SELECT u_username FROM User WHERE u_username = '$username'";
+    $query = "SELECT u_username FROM user_project WHERE u_username = '$username'";
     $result = mysqli_query($conn,$query);
     return mysqli_num_rows($result) > 0;
 }
@@ -20,7 +21,7 @@ function username_taken($username) {
 function valid_user($username, $password) {
     global $conn;
 
-    $query = "SELECT u_username, u_password FROM User WHERE u_username = '$username' AND u_password = '$password'";
+    $query = "SELECT u_username, u_password FROM user_project WHERE u_username = '$username' AND u_password = '$password'";
     $result = mysqli_query($conn, $query);
     return mysqli_num_rows($result) > 0;
 }
