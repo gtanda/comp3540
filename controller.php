@@ -1,5 +1,6 @@
 <?php
-require_once ("model.php");
+require_once("indexmodel.php");
+require_once("mainpagemodel.php");
 
 if (!isset($_POST['page'])) {  // When no page is sent from the client; The initial display
     $error_message = "";
@@ -53,6 +54,27 @@ if($_POST['page'] == 'IndexPage') {
             add_meal($_SESSION['userID'], $mealName,$calories);
             include('mainpage.php');
         break;
+        case 'GetMeals':
+            get_meals($_SESSION['username']);
+        break;
+        case 'AddExercise':
+            $exercise = $_POST['exercise'];
+            $sets = $_POST['sets'];
+            $reps = $_POST['reps'];
+            $weight = $_POST['weight'];
+            add_exercise($exercise,$sets,$reps,$weight,$_SESSION['userID']);
+            include('mainpage.php');
+        break;
+        case 'GetExercises':
+            get_exercises($_SESSION['username']);
+        break;
+        case 'AddSleep':
+            $sleep = $_POST['sleep'];
+            add_sleep($_SESSION['userID'], $sleep);
+            include('mainpage.php');
+        break;
+        case 'GetSleep':
+            get_sleep($_SESSION['username']);
     }
 
 } else if($_POST['page'] == 'ProfilePage') {

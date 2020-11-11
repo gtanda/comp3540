@@ -5,8 +5,8 @@ require_once ('db.php');
 function join_user($username, $password, $email) {
     global $conn;
 
-    $date = date('Y/m/d');
-    $query = "INSERT INTO user_project VALUES (NULL, '$username', '$password', '$email', '$date')";
+    $date = date('Ymd');
+    $query = "INSERT INTO user_project VALUES (NULL, '$username', '$password', '$email', $date)";
     return mysqli_query($conn,$query);
 }
 
@@ -39,14 +39,3 @@ function get_user_id($username) {
     return -1;
 }
 
-function sign_out() {
-    session_unset();
-    session_destroy();
-}
-
-function add_meal($uid, $mealname, $calories){
-    global $conn;
-
-    $query = "INSERT INTO meal_project VALUES(NULL, '$mealname', '$calories', $uid)";
-    return mysqli_query($conn, $query);
-}

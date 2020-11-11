@@ -19,12 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01be4ac6-64cb-4c08-8bcc-2796b17e979c" name="Default Changelist" comment="Changed table names">
+    <list default="true" id="01be4ac6-64cb-4c08-8bcc-2796b17e979c" name="Default Changelist" comment="Added meal table, and ability to add meals">
+      <change afterPath="$PROJECT_DIR$/mainpagemodel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainpage.php" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/indexmodel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +88,8 @@
       <workItem from="1604518502253" duration="2751000" />
       <workItem from="1604787569503" duration="14399000" />
       <workItem from="1604963670563" duration="6000" />
-      <workItem from="1604968572488" duration="6161000" />
+      <workItem from="1604968572488" duration="6305000" />
+      <workItem from="1605041042227" duration="18240000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit, finished login, signup so far">
       <created>1604802264679</created>
@@ -111,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604971345423</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added meal table, and ability to add meals">
+      <created>1604974924137</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1604974924137</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,18 +135,28 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit, finished login, signup so far" />
     <MESSAGE value="Fixed page routing by using session_start, added functionality to log user out" />
     <MESSAGE value="Changed table names" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed table names" />
+    <MESSAGE value="Added meal table, and ability to add meals" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added meal table, and ability to add meals" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1700" y="458" key="FileChooserDialogImpl" timestamp="1604974297561">
+    <state x="94" y="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605050557179">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1700" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1604974297561" />
+    <state x="94" y="708" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1605050557179" />
+    <state x="1700" y="458" key="FileChooserDialogImpl" timestamp="1605046019708">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1700" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1605046019708" />
+    <state x="449" y="76" key="NewPhpClassDialog" timestamp="1605053236947">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="449" y="76" key="NewPhpClassDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1605053236947" />
     <state x="474" y="277" key="NewPhpFileDialog" timestamp="1604796749468">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -147,10 +165,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="829" y="70" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1604971071377" />
-    <state x="1511" y="436" key="Vcs.Push.Dialog.v2" timestamp="1604971350780">
+    <state x="1511" y="436" key="Vcs.Push.Dialog.v2" timestamp="1604974928969">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1511" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1604971350780" />
+    <state x="1511" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1604974928969" />
     <state x="-7" y="700" width="1290" height="707" key="dock-window-1" timestamp="1603242545787">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
