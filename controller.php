@@ -45,7 +45,8 @@ if($_POST['page'] == 'IndexPage') {
 
     switch($command) {
         case 'SignOut':
-            sign_out();
+            session_unset();
+            session_destroy();
             include('index.php');
         break;
         case 'AddMeal':
@@ -80,10 +81,18 @@ if($_POST['page'] == 'IndexPage') {
 } else if($_POST['page'] == 'ProfilePage') {
     $command = $_POST['command'];
 
-    switch($command) {
+    switch ($command) {
         case 'SignOut':
-            sign_out();
+            session_unset();
+            session_destroy();
             include('index.php');
+            break;
+        case 'setImage':
+            echo $upload_max_size = ini_get('upload_max_filesize');
+            echo $post_max_size=ini_get('post_max_size');
+            print_r($_FILES);
+            include('profile.php');
+        break;
     }
 }
 

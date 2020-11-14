@@ -35,16 +35,17 @@ if (!isset($_SESSION['SignIn'])) {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>
-            <li class="nav-item"><a class="nav-link" href="controller.php" id="logoutProfile">
-                    <form style="display: inline-block" action="controller.php" method="post">
-                        <input type='hidden' name='page' value='MainPage'>
-                        <input type='hidden' name='command' value='SignOut'>
-                    </form>
-                    Logout</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="controller.php" id="logoutMainPage">Logout</a></li>
         </ul>
     </div>
 </nav>
+
+<!-- MainPage logout -->
+<form style="display: inline-block" action="controller.php" method="post" id="mainpageSignOut">
+    <input type='hidden' name='page' value='MainPage'>
+    <input type='hidden' name='command' value='SignOut'>
+</form>
+
 
 <form action="controller.php" method="post" class="form-horizontal"
       style="margin: 0.8vh auto; border: 0.4vh solid black; width: 40%; text-align: center;">
@@ -146,7 +147,7 @@ if (!isset($_SESSION['SignIn'])) {
             let row = JSON.parse(data);
             if (row.length) {
                 let table = "<table class='table'>";
-                table += "<thead class='thead-dark'><th>Exercise</th><th>Sets</th><th>Reps</th><th>Weight</th><th>Total</th></thead>";
+                table += "<thead class='thead-dark'><th>Exercise</th><th>Sets</th><th>Reps</th><th>Weight</th><th>Total</th><th>Date</th></thead>";
                 for (let index = 0; index < row.length; index++) {
                     table += "<tr>";
                     for (let property in row[index]) {
@@ -184,6 +185,10 @@ if (!isset($_SESSION['SignIn'])) {
                 $('#result-pane').html("<div class='alert alert-danger' role='alert'>No Sleep Tracked<button type='button' class='close' data-dismiss='alert' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button> </div>");
             }
         })
+    })
+
+    $('#logoutProfile').click(function(){
+        $('#mainpageSignOut').submit();
     })
 
 </script>

@@ -26,18 +26,33 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item"><a class="nav-link" href="mainpage.php">MainPage</a></li>
-            <li class="nav-item"><a class="nav-link" href="controller.php" id="logoutProfile">
-                    <form style="display: inline-block" action="controller.php" method="post">
-                        <input type='hidden' name='page' value='ProfilePage'>
-                        <input type='hidden' name='command' value='SignOut'>
-                    </form>
-                Logout</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="controller.php" id="logoutProfile">Logout</a></li>
         </ul>
     </div>
 
+    <!-- Signout form -->
+    <form style="display: inline-block" action="controller.php" method="post" id="profileSignOut">
+        <input type='hidden' name='page' value='ProfilePage'>
+        <input type='hidden' name='command' value='SignOut'>
+    </form>
+
 </nav>
     <h1><?php echo 'Hello ' . $_SESSION['username']?></h1>
+    <div class="container">
+        <div class="row">
+            <form action="controller.php" method="POST" enctype="multipart/form-data">
+                <h4>Upload Profile Image</h4>
+
+                <input type='hidden' name='page' value='ProfilePage'>
+                <input type='hidden' name='command' value='setImage'>
+
+                <div class="form-group">
+                    <input type="file" name="profileImage" class="form-control">
+                </div>
+                <button class="submit btn btn-primary btn-block">Save Profile Image</button>
+            </form>
+        </div>
+    </div>
 
 
 
@@ -47,3 +62,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
+
+<script>
+    $('#logoutProfile').click(function(){
+        $('#profileSignOut').submit();
+    })
+</script>

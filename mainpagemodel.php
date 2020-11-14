@@ -1,11 +1,6 @@
 <?php
 require_once('db.php');
 
-function sign_out() {
-    session_unset();
-    session_destroy();
-}
-
 
 // Meal Functions
 function add_meal($uid, $mealname, $calories){
@@ -76,7 +71,7 @@ function get_exercises($username){
 
     $userID = get_user_id($username);
 
-    $query = "SELECT w_exercise, w_sets, w_sets, w_reps, w_weight, w_total FROM weight_project JOIN user_project ON w_user_id = u_id 
+    $query = "SELECT w_exercise, w_sets, w_reps, w_weight, w_total, w_date FROM weight_project JOIN user_project ON w_user_id = u_id 
 WHERE DATEDIFF(SYSDATE(), w_date) < 365 AND w_user_id = $userID";
     $result = mysqli_query($conn, $query);
 
@@ -89,7 +84,6 @@ WHERE DATEDIFF(SYSDATE(), w_date) < 365 AND w_user_id = $userID";
 
 
 // Sleep functions
-
 function add_sleep($uid, $sleep){
     global $conn;
 
