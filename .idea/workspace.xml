@@ -19,11 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01be4ac6-64cb-4c08-8bcc-2796b17e979c" name="Default Changelist" comment="Finished ability to add weight, sleep and display all as well">
+    <list default="true" id="01be4ac6-64cb-4c08-8bcc-2796b17e979c" name="Default Changelist" comment="progress to upload images">
+      <change afterPath="$PROJECT_DIR$/profilemodel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainpage.php" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpagemodel.php" beforeDir="false" afterPath="$PROJECT_DIR$/mainpagemodel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,21 +45,25 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1jA7yvWbmBRqZ55offIIWrNRQ9h" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/COMP 3540/Week8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="SQL Dialects" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Program Files\Ampps\www\Sandbox\images" />
       <recent name="C:\Program Files\Ampps\www\Sandbox" />
       <recent name="C:\Program Files\Ampps\www\Sandbox\views" />
       <recent name="C:\Program Files\Ampps\www\Sandbox\models" />
@@ -89,7 +94,8 @@
       <workItem from="1604963670563" duration="6000" />
       <workItem from="1604968572488" duration="6305000" />
       <workItem from="1605041042227" duration="18906000" />
-      <workItem from="1605320078852" duration="5338000" />
+      <workItem from="1605320078852" duration="5395000" />
+      <workItem from="1605470218645" duration="13501000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit, finished login, signup so far">
       <created>1604802264679</created>
@@ -126,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605061673761</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="progress to upload images">
+      <created>1605325502239</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1605325502239</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,18 +158,24 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit, finished login, signup so far" />
     <MESSAGE value="Fixed page routing by using session_start, added functionality to log user out" />
     <MESSAGE value="Changed table names" />
     <MESSAGE value="Added meal table, and ability to add meals" />
     <MESSAGE value="Finished ability to add weight, sleep and display all as well" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished ability to add weight, sleep and display all as well" />
+    <MESSAGE value="progress to upload images" />
+    <option name="LAST_COMMIT_MESSAGE" value="progress to upload images" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="94" y="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605050557179">
+    <state x="94" y="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605477611640">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="94" y="708" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1605050557179" />
+    <state x="94" y="708" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1605477611640" />
+    <state x="370" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605480126311">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="370" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1605480126311" />
     <state x="1700" y="458" key="FileChooserDialogImpl" timestamp="1605324448482">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -165,18 +184,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="449" y="76" key="NewPhpClassDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1605053236947" />
-    <state x="474" y="277" key="NewPhpFileDialog" timestamp="1604796749468">
+    <state x="474" y="277" key="NewPhpFileDialog" timestamp="1605470513688">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="474" y="277" key="NewPhpFileDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1604796749468" />
+    <state x="474" y="277" key="NewPhpFileDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1605470513688" />
     <state x="829" y="70" key="SettingsEditor" timestamp="1604971071377">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="829" y="70" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1604971071377" />
-    <state x="1511" y="436" key="Vcs.Push.Dialog.v2" timestamp="1605061680878">
+    <state x="1511" y="436" key="Vcs.Push.Dialog.v2" timestamp="1605325507828">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1511" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605061680878" />
+    <state x="1511" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605325507828" />
+    <state x="246" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605475270583">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="246" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1605475270583" />
     <state x="-7" y="700" width="1290" height="707" key="dock-window-1" timestamp="1603242545787">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

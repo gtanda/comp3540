@@ -1,6 +1,7 @@
 <?php
 require_once("indexmodel.php");
 require_once("mainpagemodel.php");
+require_once("profilemodel.php");
 
 if (!isset($_POST['page'])) {  // When no page is sent from the client; The initial display
     $error_message = "";
@@ -87,12 +88,11 @@ if($_POST['page'] == 'IndexPage') {
             session_destroy();
             include('index.php');
             break;
-        case 'setImage':
-            echo $upload_max_size = ini_get('upload_max_filesize');
-            echo $post_max_size=ini_get('post_max_size');
-            print_r($_FILES);
-            include('profile.php');
+        case 'Unsubscribe':
+            unsubscribe($_SESSION['userID']);
+            include('index.php');
         break;
+
     }
 }
 

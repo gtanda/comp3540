@@ -1,4 +1,13 @@
-<?php if(!isset($_SESSION)) session_start();?>
+<?php
+if(!isset($_SESSION)) session_start();
+if (!isset($_SESSION['SignIn'])) {
+include('index.php');
+exit();
+}
+?>
+
+<!doctype html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -11,10 +20,11 @@
             cursor: pointer;
         }
     </style>
-
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
+
+<body>
 
 <!-- Header -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -37,22 +47,44 @@
     </form>
 
 </nav>
-    <h1><?php echo 'Hello ' . $_SESSION['username']?></h1>
-    <div class="container">
-        <div class="row">
-            <form action="controller.php" method="POST" enctype="multipart/form-data">
-                <h4>Upload Profile Image</h4>
 
-                <input type='hidden' name='page' value='ProfilePage'>
-                <input type='hidden' name='command' value='setImage'>
+<div class="container">
+    <h1><?php echo 'Hello ' . $_SESSION['username'];?></h1>
+</div>
 
-                <div class="form-group">
-                    <input type="file" name="profileImage" class="form-control">
-                </div>
-                <button class="submit btn btn-primary btn-block">Save Profile Image</button>
-            </form>
+<div class="container" style="padding-top: 2.5vh;">
+
+<button class="btn btn-danger" data-target="#modalUnsub" data-toggle="modal">Unsubscribe</button>
+    <!-- Modal to join user -->
+    <div class='modal fade' id='modalUnsub'>
+        <div class='modal-dialog'>
+            <div class='modal-content'>
+                <form method='post' action='controller.php'>
+                    <div class='modal-header'>
+                        <h2 class='modal-title'>Unsubscribe?</h2>
+                    </div>
+                    <div class='modal-body'>
+                        <input type='hidden' name='page' value='ProfilePage'>
+                        <input type='hidden' name='command' value='Unsubscribe'>
+                        <div class='form-group'>
+                            <p>Are you sure you want to unsubscribe?</p>
+                        </div>
+                    </div>
+                    <div class='modal-footer'>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
+
+</div>
+
+
+
 
 
 
@@ -68,3 +100,8 @@
         $('#profileSignOut').submit();
     })
 </script>
+
+
+</body>
+</html>
+

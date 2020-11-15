@@ -85,12 +85,26 @@ if (!isset($_SESSION['SignIn'])) {
     <input type="hidden" name="command" value="AddSleep">
 
     <div style="margin: 1vh 0.5vh;">
-        <input style="display: block; margin: 1.2vh auto" type="text" placeholder="Enter Hours of Sleep" name="sleep" aria-label="Enter Sleep Name" required>
+        <input style="display: block; margin: 1.2vh auto" type="text" placeholder="Enter Hours of Sleep" name="sleep" aria-label="Enter Sleep" required>
     </div>
 
     <button type="submit" class="btn btn-primary" style="margin: 1vh auto;">Submit</button>
     <button type="button" class="btn btn-warning" id="getSleepButton" style="margin: 1vh auto;">View Sleep</button>
 </form>
+
+<div style="margin: 0.8vh auto; border: 0.4vh solid black; width: 40%; text-align: center;">
+    <div style="margin: 1vh 0.5vh;">
+        <input style="display: block; margin: 1.2vh auto;" type="text" placeholder="Enter Weight (KG)" id="weight" aria-label="Enter Weight" required>
+    </div>
+    <div style="margin: 1vh 0.5vh;">
+        <input style="display: block; margin: 1.2vh auto;" type="text" placeholder="Enter Height (CM)" id="height" aria-label="Enter Weight" required>
+    </div>
+    <div style="margin: 1vh 0.5vh;">
+        <p id="displayBMI" style="border: 1px solid black; display: none; padding: 1.2vh;"></p>
+    </div>
+    <button type="submit" class="btn btn-primary" id="bmiButton" style="margin: 1vh auto; width: 80%;">Submit</button>
+    <button type="submit" class="btn btn-primary" id="clearBmiButton" style="margin: 1vh auto; width: 80%;">Clear</button>
+</div>
 
 <hr>
 
@@ -191,5 +205,27 @@ if (!isset($_SESSION['SignIn'])) {
         $('#mainpageSignOut').submit();
     })
 
+    $('#bmiButton').click(function() {
+        let BMI = Math.floor(($('#weight').val() / Math.pow($('#height').val(),2)) * 10000);
+        let bmiCategory = '';
+            if(BMI < 18.5) {
+                bmiCategory = 'Underweight'
+            } else if(BMI >= 18.5 && BMI < 25) {
+                bmiCategory  = 'Normal Weight';
+            } else if(BMI >= 25 && BMI < 30) {
+                bmiCategory  = 'Overweight';
+            } else {
+                bmiCategory  = 'Obese';
+        }
+
+        $('#displayBMI').css('display','inline-block').html(`Your current BMI is: ${BMI}, category: ${bmiCategory}`);
+
+    })
+
+    $('#clearBmiButton').click(function() {
+        $('#weight').val('');
+        $('#height').val('');
+        $('#displayBMI').css('display','none');
+    })
 </script>
 

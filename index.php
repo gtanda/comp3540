@@ -58,7 +58,7 @@
                     </div>
                     <div class='modal-footer'>
                         <div class="form-group">
-                            <button type="button" class="btn btn-primary" id="loginModalClose">Cancel</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                     </div>
                     <div class='modal-footer'>
                         <div class="form-group">
-                            <button type="button" class="btn btn-primary" id="joinModalClose">Cancel</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
@@ -118,7 +118,6 @@
     }
     ?>
 
-
     function showJoin() {
         $('#modalJoin').modal('show');
     }
@@ -126,13 +125,5 @@
     function showLogin() {
         $('#modalLogin').modal('show');
     }
-
-    $('#joinModalClose').click(function(){
-        $('#modalJoin').modal('hide');
-    });
-
-    $('#loginModalClose').click(function(){
-        $('#modalLogin').modal('hide');
-    });
 
 </script>
