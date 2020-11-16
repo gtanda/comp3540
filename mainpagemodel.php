@@ -30,8 +30,7 @@ function get_meals($username){
 
     $userID = get_user_id($username);
 
-    $query = "SELECT m_name, m_calories, m_date FROM meal_project JOIN user_project ON m_user_id = u_id 
-    WHERE DATEDIFF(SYSDATE(), m_date) < 365 AND m_user_id = $userID";
+    $query = "SELECT m_name, m_calories, m_date FROM meal_project WHERE DATEDIFF(SYSDATE(), m_date) < 365 AND m_user_id = $userID";
     $result = mysqli_query($conn, $query);
 
     $data = [];
@@ -71,7 +70,7 @@ function get_exercises($username){
 
     $userID = get_user_id($username);
 
-    $query = "SELECT w_exercise, w_sets, w_reps, w_weight, w_total, w_date FROM weight_project JOIN user_project ON w_user_id = u_id 
+    $query = "SELECT w_exercise, w_sets, w_reps, w_weight, w_total, w_date FROM weight_project 
 WHERE DATEDIFF(SYSDATE(), w_date) < 365 AND w_user_id = $userID";
     $result = mysqli_query($conn, $query);
 
@@ -111,8 +110,7 @@ function get_sleep($username){
 
     $userID = get_user_id($username);
 
-    $query = "SELECT s_sleep, s_date FROM sleep_project JOIN user_project ON s_user_id = u_id
-WHERE DATEDIFF(SYSDATE(), s_date) < 365 AND s_user_id = $userID";
+    $query = "SELECT s_sleep, s_date FROM sleep_project WHERE DATEDIFF(SYSDATE(), s_date) < 365 AND s_user_id = $userID";
     $result = mysqli_query($conn, $query);
 
     $data = [];
@@ -120,4 +118,65 @@ WHERE DATEDIFF(SYSDATE(), s_date) < 365 AND s_user_id = $userID";
         $data[] = $row;
     }
     echo json_encode($data);
+}
+
+function add_resource($title, $link, $id){
+    global $conn;
+
+    $date = date('Ymd');
+    $query = "INSERT INTO resource_project VALUES(NULL, '$title', '$link', $id, $date)";
+    $result = mysqli_query($conn, $query);
+
+    if($result) {
+        echo "<div class='alert alert-success' role='alert'><strong>Resource Added!</strong>
+                  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                  </button>
+              </div>";
+    } else {
+        echo "<div class='alert alert-danger' role='alert'><strong>Resource Not Added</strong>
+                  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                  </button>
+              </div>";
+    }
+}
+
+function get_resources_list($username){
+    global $conn;
+
+    $userID = get_user_id($username);
+
+    $query = "SELECT r_title, r_link, r_id FROM resource_project WHERE r_user_id = $userID AND DATEDIFF(SYSDATE(), r_date)";
+    $result = mysqli_query($conn, $query);
+
+    $data = [];
+    while($row = mysqli_fetch_assoc($result)) {
+        $data[] = $row;
+    }
+    echo json_encode($data);
+}
+
+function delete_item($item_id) {
+    global $conn;
+
+    echo 'item id is ' . $item_id;
+
+    $query = "DELETE FROM resource_project WHERE r_id = $item_id";
+    $result = mysqli_query($conn, $query);
+
+    if($result) {
+        echo "<div class='alert alert-danger' role='alert'><strong>Item Not Removed</strong>
+                  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                  </button>
+              </div>";
+    } else {
+        echo "<div class='alert alert-danger' role='alert'><strong>Resource Not Added</strong>
+                  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                  </button>
+              </div>";
+    }
+
 }

@@ -77,6 +77,20 @@ if($_POST['page'] == 'IndexPage') {
         break;
         case 'GetSleep':
             get_sleep($_SESSION['username']);
+        break;
+        case 'AddResource':
+            $title = $_POST['title'];
+            $link = $_POST['link'];
+            add_resource($title, $link, $_SESSION['userID']);
+            include('mainpage.php');
+        break;
+        case 'GetResources':
+            get_resources_list($_SESSION['username']);
+        break;
+        case 'DeleteItem':
+            $resource_id = $_POST['r_id'];
+            delete_item($resource_id);
+        break;
     }
 
 } else if($_POST['page'] == 'ProfilePage') {
@@ -92,6 +106,7 @@ if($_POST['page'] == 'IndexPage') {
             unsubscribe($_SESSION['userID']);
             include('index.php');
         break;
+
 
     }
 }

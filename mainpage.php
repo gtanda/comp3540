@@ -46,10 +46,9 @@ if (!isset($_SESSION['SignIn'])) {
     <input type='hidden' name='command' value='SignOut'>
 </form>
 
-
+<!-- ADD MEALS -->
 <form action="controller.php" method="post" class="form-horizontal"
       style="margin: 0.8vh auto; border: 0.4vh solid black; width: 40%; text-align: center;">
-
     <input type="hidden" name="page" value="MainPage">
     <input type="hidden" name="command" value="AddMeal">
 
@@ -62,9 +61,8 @@ if (!isset($_SESSION['SignIn'])) {
     <button type="button" class="btn btn-warning" id="getMealsButton" style="margin: 1vh auto;">Get Meals</button>
 </form>
 
-
+<!-- ADD EXERCISES -->
 <form action="controller.php" method="post" class="form-horizontal" style="margin: 0.8vh auto; border: 0.4vh solid black; width: 40%; text-align: center;">
-
     <input type="hidden" name="page" value="MainPage">
     <input type="hidden" name="command" value="AddExercise">
 
@@ -79,8 +77,9 @@ if (!isset($_SESSION['SignIn'])) {
     <button type="button" class="btn btn-warning" id="getExercisesButton" style="margin: 1vh auto;">View Lifts</button>
 </form>
 
-<form action="controller.php" method="post" class="form-horizontal" style="margin: 0.8vh auto; border: 0.4vh solid black; width: 40%; text-align: center;">
 
+<!-- ADD SLEEP -->
+<form action="controller.php" method="post" class="form-horizontal" style="margin: 0.8vh auto; border: 0.4vh solid black; width: 40%; text-align: center;">
     <input type="hidden" name="page" value="MainPage">
     <input type="hidden" name="command" value="AddSleep">
 
@@ -92,12 +91,14 @@ if (!isset($_SESSION['SignIn'])) {
     <button type="button" class="btn btn-warning" id="getSleepButton" style="margin: 1vh auto;">View Sleep</button>
 </form>
 
+
+<!-- CALC BMI -->
 <div style="margin: 0.8vh auto; border: 0.4vh solid black; width: 40%; text-align: center;">
     <div style="margin: 1vh 0.5vh;">
-        <input style="display: block; margin: 1.2vh auto;" type="text" placeholder="Enter Weight (KG)" id="weight" aria-label="Enter Weight" required>
+        <input style="display: block; margin: 1.2vh auto;" type="text" placeholder="Enter Weight (KG)" id="weight" aria-label="Enter Weight">
     </div>
     <div style="margin: 1vh 0.5vh;">
-        <input style="display: block; margin: 1.2vh auto;" type="text" placeholder="Enter Height (CM)" id="height" aria-label="Enter Weight" required>
+        <input style="display: block; margin: 1.2vh auto;" type="text" placeholder="Enter Height (CM)" id="height" aria-label="Enter Weight">
     </div>
     <div style="margin: 1vh 0.5vh;">
         <p id="displayBMI" style="border: 1px solid black; display: none; padding: 1.2vh;"></p>
@@ -105,6 +106,20 @@ if (!isset($_SESSION['SignIn'])) {
     <button type="submit" class="btn btn-primary" id="bmiButton" style="margin: 1vh auto; width: 80%;">Submit</button>
     <button type="submit" class="btn btn-primary" id="clearBmiButton" style="margin: 1vh auto; width: 80%;">Clear</button>
 </div>
+
+<!-- RESOURCE LIST -->
+<form action="controller.php" method="post" style="margin: 0.8vh auto; border: 0.4vh solid black; width: 40%; text-align: center;">
+    <input type="hidden" name="page" value="MainPage">
+    <input type="hidden" name="command" value="AddResource">
+
+    <div style="margin: 1vh 0.5vh;">
+        <input style="display: block; margin: 1.2vh auto" type="text" placeholder="Enter Resource Title" name="title" aria-label="Enter Resource Title" required>
+        <input style="display: block; margin: 1.2vh auto" type="text" placeholder="Enter Resource Link" name="link" aria-label="Enter Resource Link" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Resource</button>
+    <button type="button" class="btn btn-warning" id="getResourcesList" style="margin: 1vh auto;">View Resources</button>
+
+</form>
 
 <hr>
 
@@ -137,7 +152,7 @@ if (!isset($_SESSION['SignIn'])) {
             let row = JSON.parse(data);
             if (row.length) {
                 let table = "<table class='table'>";
-                table += "<thead class='thead-dark'><th>Meal</th><th>Calories</th><th>Date</th></thead>";
+                table += "<thead class='thead-dark'><th>Meal</th><th>Calories</th><th>Date(YYYYMMDD)</th></thead>";
                 for (let index = 0; index < row.length; index++) {
                     table += "<tr>";
                     for (let property in row[index]) {
@@ -161,7 +176,7 @@ if (!isset($_SESSION['SignIn'])) {
             let row = JSON.parse(data);
             if (row.length) {
                 let table = "<table class='table'>";
-                table += "<thead class='thead-dark'><th>Exercise</th><th>Sets</th><th>Reps</th><th>Weight</th><th>Total</th><th>Date</th></thead>";
+                table += "<thead class='thead-dark'><th>Exercise</th><th>Sets</th><th>Reps</th><th>Weight</th><th>Total</th><th>Date (YYYYMMDD)</th></thead>";
                 for (let index = 0; index < row.length; index++) {
                     table += "<tr>";
                     for (let property in row[index]) {
@@ -185,7 +200,7 @@ if (!isset($_SESSION['SignIn'])) {
             let row = JSON.parse(data);
             if (row.length) {
                 let table = "<table class='table'>";
-                table += "<thead class='thead-dark'><th>Hours of Sleep</th><th>Date</th></thead>";
+                table += "<thead class='thead-dark'><th>Hours of Sleep</th><th>Date (YYYYMMDD)</th></thead>";
                 for (let index = 0; index < row.length; index++) {
                     table += "<tr>";
                     for (let property in row[index]) {
@@ -207,7 +222,7 @@ if (!isset($_SESSION['SignIn'])) {
 
     $('#bmiButton').click(function() {
         let BMI = Math.floor(($('#weight').val() / Math.pow($('#height').val(),2)) * 10000);
-        let bmiCategory = '';
+        let bmiCategory;
             if(BMI < 18.5) {
                 bmiCategory = 'Underweight'
             } else if(BMI >= 18.5 && BMI < 25) {
@@ -218,7 +233,7 @@ if (!isset($_SESSION['SignIn'])) {
                 bmiCategory  = 'Obese';
         }
 
-        $('#displayBMI').css('display','inline-block').html(`Your current BMI is: ${BMI}, category: ${bmiCategory}`);
+        $('#displayBMI').css('display','inline-block').html((isNaN(BMI) ? 'Please Enter Values' : `Current BMI: ${BMI}, Category: ${bmiCategory}`));
 
     })
 
@@ -227,5 +242,54 @@ if (!isset($_SESSION['SignIn'])) {
         $('#height').val('');
         $('#displayBMI').css('display','none');
     })
+
+    $('#getResourcesList').click(function () {
+        $.post('controller.php', {
+            page: 'MainPage',
+            command: 'GetResources'
+        }, function (data) {
+            console.log(data);
+            let row = JSON.parse(data);
+            if (row.length) {
+                let table = "<table class='table resourceTable'>";
+                table += "<thead class='thead-dark'><th>Delete</th><th>Title</th><th>Link</th><th>ID</th></thead>";
+                for (let index = 0; index < row.length; index++) {
+                    table += "<tr class='rows'>";
+                    table += "<td><button class='btn btn-danger deleteItem'>Delete</button></td>";
+
+                    for (let property in row[index]) {
+                        table += "<td>" + (row[index][property]) + "</td>";
+                    }
+                    table += "</tr>";
+                }
+                table += "</table>";
+                $('#result-pane').html(table);
+            } else {
+                $('#result-pane').html("<div class='alert alert-danger' role='alert'>No Resources in List<button type='button' class='close' data-dismiss='alert' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button> </div>");
+            }
+        })
+    })
+
+
+    $(document).on('click', '.deleteItem', function() {
+        let row= ($('.rows').index($(this).closest('tr')));
+        let rowID;
+
+        if($('.rows').length >  1) {
+            rowID = $('.rows').siblings()[row].children[3].innerHTML;
+        } else {
+            rowID = $('.rows').closest('table').children('tbody').children('tr.rows')[0].children[3].innerHTML
+        }
+
+        $.post('controller.php', {
+            page: 'MainPage',
+            command: 'DeleteItem',
+            r_id: rowID
+        }, function(result){
+            console.log(result);
+        })
+    })
+
+
 </script>
 

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -19,13 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01be4ac6-64cb-4c08-8bcc-2796b17e979c" name="Default Changelist" comment="progress to upload images">
-      <change afterPath="$PROJECT_DIR$/profilemodel.php" afterDir="false" />
+    <list default="true" id="01be4ac6-64cb-4c08-8bcc-2796b17e979c" name="Default Changelist" comment="need to rework image upload, finished unsubscribe and bmi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainpage.php" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpagemodel.php" beforeDir="false" afterPath="$PROJECT_DIR$/mainpagemodel.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +96,7 @@
       <workItem from="1604968572488" duration="6305000" />
       <workItem from="1605041042227" duration="18906000" />
       <workItem from="1605320078852" duration="5395000" />
-      <workItem from="1605470218645" duration="13501000" />
+      <workItem from="1605470218645" duration="24950000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit, finished login, signup so far">
       <created>1604802264679</created>
@@ -139,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605325502239</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="need to rework image upload, finished unsubscribe and bmi">
+      <created>1605483897673</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1605483897673</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +173,8 @@
     <MESSAGE value="Added meal table, and ability to add meals" />
     <MESSAGE value="Finished ability to add weight, sleep and display all as well" />
     <MESSAGE value="progress to upload images" />
-    <option name="LAST_COMMIT_MESSAGE" value="progress to upload images" />
+    <MESSAGE value="need to rework image upload, finished unsubscribe and bmi" />
+    <option name="LAST_COMMIT_MESSAGE" value="need to rework image upload, finished unsubscribe and bmi" />
   </component>
   <component name="WindowStateProjectService">
     <state x="94" y="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605477611640">
@@ -192,10 +201,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="829" y="70" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1604971071377" />
-    <state x="1511" y="436" key="Vcs.Push.Dialog.v2" timestamp="1605325507828">
+    <state x="1511" y="436" key="Vcs.Push.Dialog.v2" timestamp="1605483902105">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1511" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605325507828" />
+    <state x="1511" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605483902105" />
     <state x="246" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605475270583">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -208,9 +217,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="296" y="159" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1604789805985" />
-    <state x="301" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1604795170111">
+    <state x="301" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1605484165075">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="301" y="145" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1604795170111" />
+    <state x="301" y="145" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1605484165075" />
   </component>
 </project>
