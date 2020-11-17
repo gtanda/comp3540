@@ -109,8 +109,24 @@ if($_POST['page'] == 'IndexPage') {
             unsubscribe($_SESSION['userID']);
             include('index.php');
         break;
-
-
+        case 'ChangePassword':
+            $newPassword = $_POST['newPassword'];
+            change_password($_SESSION['username'], $newPassword);
+            session_unset();
+            session_destroy();
+            include('index.php');
+        break;
+        case 'ChangeUsername':
+            $newUsername = $_POST['newName'];
+            if(!username_taken($newUsername)) {
+                change_username($_SESSION['username'], $newUsername);
+                session_unset();
+                session_destroy();
+                include('index.php');
+            } else {
+                $profile_error_username = 'Username [' . $newUsername . '] is already taken';
+                include ('profile.php');
+            }
     }
 }
 

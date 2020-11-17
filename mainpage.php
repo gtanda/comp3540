@@ -126,7 +126,7 @@ if (!isset($_SESSION['SignIn'])) {
 <div style="margin: 0.8vh auto; border: 0.4vh solid black; width: 40%; text-align: center;">
     <h3>Calculate Your BMI</h3>
     <p>Please remember, BMI does not take into account muscle mass, bone density, overall body composition, race or sex differences
-        <a href="https://www.medicalnewstoday.com/articles/265215">Medial News Today</a></p>
+        <a href="https://www.medicalnewstoday.com/articles/265215">(Medial News Today)</a></p>
     <div style="margin: 1vh 0.5vh;">
         <input style="display: block; margin: 1.2vh auto;" type="text" placeholder="Enter Weight (KG)" id="weight" aria-label="Enter Weight">
     </div>

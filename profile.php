@@ -82,12 +82,17 @@ exit();
     </div>
 
     <form action="controller.php" method="post" style="margin: 1.3vh">
-        <input type="text" name="newName" placeholder="Enter New Name" aria-label="Enter New Name">
+        <input type='hidden' name='page' value='ProfilePage'>
+        <input type='hidden' name='command' value='ChangeUsername'>
+        <input type="text" name="newName" placeholder="Enter New Name" aria-label="Enter New Name" required>
         <button class="btn btn-primary btn-sm">Submit new Name</button>
+        <?php if(!empty($profile_error_username)) echo $profile_error_username;?>
     </form>
 
     <form action="controller.php" method="post" style="margin: 1.3vh">
-        <input type="text" name="newPassword" placeholder="Enter New Password" aria-label="Enter New Password">
+        <input type='hidden' name='page' value='ProfilePage'>
+        <input type='hidden' name='command' value='ChangePassword'>
+        <input type="password" name="newPassword" placeholder="Enter New Password" aria-label="Enter New Password" required>
         <button class="btn btn-primary btn-sm">Submit new Password</button>
 
     </form>
