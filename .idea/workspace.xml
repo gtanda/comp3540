@@ -22,11 +22,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01be4ac6-64cb-4c08-8bcc-2796b17e979c" name="Default Changelist" comment="need to rework image upload, finished unsubscribe and bmi">
+    <list default="true" id="01be4ac6-64cb-4c08-8bcc-2796b17e979c" name="Default Changelist" comment="working resource list finished, comeback to add more touches possibly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainpage.php" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainpagemodel.php" beforeDir="false" afterPath="$PROJECT_DIR$/mainpagemodel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +58,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/COMP 3540/Week8" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="SQL Dialects" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -96,7 +97,8 @@
       <workItem from="1604968572488" duration="6305000" />
       <workItem from="1605041042227" duration="18906000" />
       <workItem from="1605320078852" duration="5395000" />
-      <workItem from="1605470218645" duration="24950000" />
+      <workItem from="1605470218645" duration="25076000" />
+      <workItem from="1605566677094" duration="4607000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit, finished login, signup so far">
       <created>1604802264679</created>
@@ -147,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605483897673</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="working resource list finished, comeback to add more touches possibly">
+      <created>1605495525653</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1605495525653</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,7 +183,9 @@
     <MESSAGE value="Finished ability to add weight, sleep and display all as well" />
     <MESSAGE value="progress to upload images" />
     <MESSAGE value="need to rework image upload, finished unsubscribe and bmi" />
-    <option name="LAST_COMMIT_MESSAGE" value="need to rework image upload, finished unsubscribe and bmi" />
+    <MESSAGE value="working resource list finished" />
+    <MESSAGE value="working resource list finished, comeback to add more touches possibly" />
+    <option name="LAST_COMMIT_MESSAGE" value="working resource list finished, comeback to add more touches possibly" />
   </component>
   <component name="WindowStateProjectService">
     <state x="94" y="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605477611640">
@@ -185,10 +196,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="370" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1605480126311" />
-    <state x="1700" y="458" key="FileChooserDialogImpl" timestamp="1605324448482">
+    <state x="1700" y="458" key="FileChooserDialogImpl" timestamp="1605566723356">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1700" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1605324448482" />
+    <state x="1700" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1605566723356" />
     <state x="449" y="76" key="NewPhpClassDialog" timestamp="1605053236947">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -201,10 +212,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="829" y="70" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1604971071377" />
-    <state x="1511" y="436" key="Vcs.Push.Dialog.v2" timestamp="1605483902105">
+    <state x="1511" y="436" key="Vcs.Push.Dialog.v2" timestamp="1605495553428">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1511" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605483902105" />
+    <state x="1511" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605495553428" />
     <state x="246" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605475270583">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

@@ -36,6 +36,7 @@ if (!isset($_SESSION['SignIn'])) {
         <ul class="navbar-nav mr-auto">
             <li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>
             <li class="nav-item"><a class="nav-link" href="controller.php" id="logoutMainPage">Logout</a></li>
+            <li class='nav-item'><a class="nav-link" id='searchResource' data-toggle='modal' data-target='#modal-search-resource'>Search Resource List</a></li>
         </ul>
     </div>
 </nav>
@@ -45,6 +46,35 @@ if (!isset($_SESSION['SignIn'])) {
     <input type='hidden' name='page' value='MainPage'>
     <input type='hidden' name='command' value='SignOut'>
 </form>
+
+
+<!-- Modal Window for SearchResources -->
+<div class='modal fade' id='modal-search-resource'>
+    <div class='modal-dialog'>
+        <div class='modal-content'>
+            <form class='' method='post' action='controller.php'>
+                <div class='modal-header'>
+                    <h2 class='modal-title'>Search Resource List</h2>
+                </div>
+                <div class='modal-body'>
+                    <input type='hidden' name='page' value='MainPage'>
+                    <input type='hidden' name='command' value='SearchResources'>
+                    <div class='form-group'>
+                        <label class="control-label" for="searchTerm">Search term:</label>
+                        <input type="text" class="form-control" id="searchTerm" name='searchTerm'
+                               placeholder="Search For A Resource">
+                    </div>
+                </div>
+                <div class='modal-footer'>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="searchSubmitButton">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <!-- ADD MEALS -->
 <form action="controller.php" method="post" class="form-horizontal"
@@ -94,6 +124,9 @@ if (!isset($_SESSION['SignIn'])) {
 
 <!-- CALC BMI -->
 <div style="margin: 0.8vh auto; border: 0.4vh solid black; width: 40%; text-align: center;">
+    <h3>Calculate Your BMI</h3>
+    <p>Please remember, BMI does not take into account muscle mass, bone density, overall body composition, race or sex differences
+        <a href="https://www.medicalnewstoday.com/articles/265215">Medial News Today</a></p>
     <div style="margin: 1vh 0.5vh;">
         <input style="display: block; margin: 1.2vh auto;" type="text" placeholder="Enter Weight (KG)" id="weight" aria-label="Enter Weight">
     </div>
@@ -248,7 +281,6 @@ if (!isset($_SESSION['SignIn'])) {
             page: 'MainPage',
             command: 'GetResources'
         }, function (data) {
-            console.log(data);
             let row = JSON.parse(data);
             if (row.length) {
                 let table = "<table class='table resourceTable'>";
@@ -278,15 +310,42 @@ if (!isset($_SESSION['SignIn'])) {
         if($('.rows').length >  1) {
             rowID = $('.rows').siblings()[row].children[3].innerHTML;
         } else {
-            rowID = $('.rows').closest('table').children('tbody').children('tr.rows')[0].children[3].innerHTML
+            rowID = $('.rows').closest('table').children('tbody').children('tr.rows')[0].children[3].innerHTML;
         }
 
         $.post('controller.php', {
             page: 'MainPage',
             command: 'DeleteItem',
             r_id: rowID
-        }, function(result){
-            console.log(result);
+        }, function(){
+            $('#result-pane').html("<div class='alert alert-success' role='alert'>Item Removed, Request Resources<button type='button' class='close' data-dismiss='alert' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button> </div>");
+        })
+    })
+
+    $('button#searchSubmitButton').click(function() {
+        $.post('controller.php', {
+            page: 'MainPage',
+            command: 'SearchResources',
+            searchTerm: $('#searchTerm').val()
+        }, function(data) {
+            let row = JSON.parse(data);
+            if (row.length) {
+                let table = "<table class='table resourceTable'>";
+                table += "<thead class='thead-dark'><th>Delete</th><th>Title</th><th>Link</th><th>ID</th></thead>";
+                for (let index = 0; index < row.length; index++) {
+                    table += "<tr class='rows'>";
+                    table += "<td><button class='btn btn-danger deleteItem'>Delete</button></td>";
+
+                    for (let property in row[index]) {
+                        table += "<td>" + (row[index][property]) + "</td>";
+                    }
+                    table += "</tr>";
+                }
+                table += "</table>";
+                $('#result-pane').html(table);
+            } else {
+                $('#result-pane').html("<div class='alert alert-danger' role='alert'>No Resources in List<button type='button' class='close' data-dismiss='alert' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button> </div>");
+            }
         })
     })
 

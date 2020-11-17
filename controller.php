@@ -91,6 +91,9 @@ if($_POST['page'] == 'IndexPage') {
             $resource_id = $_POST['r_id'];
             delete_item($resource_id);
         break;
+        case 'SearchResources':
+            search_resources($_POST['searchTerm'], $_SESSION['username']);
+        break;
     }
 
 } else if($_POST['page'] == 'ProfilePage') {

@@ -52,9 +52,9 @@ exit();
     <h1><?php echo 'Hello ' . $_SESSION['username'];?></h1>
 </div>
 
-<div class="container" style="padding-top: 2.5vh;">
+<div class="container" style="padding-top: 2.5vh; border: 1px solid black;">
 
-<button class="btn btn-danger" data-target="#modalUnsub" data-toggle="modal">Unsubscribe</button>
+<button class="btn btn-danger" data-target="#modalUnsub" data-toggle="modal" style="margin: 1.2vh">Unsubscribe</button>
     <!-- Modal to join user -->
     <div class='modal fade' id='modalUnsub'>
         <div class='modal-dialog'>
@@ -80,6 +80,17 @@ exit();
             </div>
         </div>
     </div>
+
+    <form action="controller.php" method="post" style="margin: 1.3vh">
+        <input type="text" name="newName" placeholder="Enter New Name" aria-label="Enter New Name">
+        <button class="btn btn-primary btn-sm">Submit new Name</button>
+    </form>
+
+    <form action="controller.php" method="post" style="margin: 1.3vh">
+        <input type="text" name="newPassword" placeholder="Enter New Password" aria-label="Enter New Password">
+        <button class="btn btn-primary btn-sm">Submit new Password</button>
+
+    </form>
 
 </div>
 
