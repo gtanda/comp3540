@@ -10,7 +10,6 @@ if (!isset($_POST['page'])) {  // When no page is sent from the client; The init
     exit();
 }
 
-
 session_start();
 
 if($_POST['page'] == 'IndexPage') {
@@ -104,7 +103,7 @@ if($_POST['page'] == 'IndexPage') {
             session_unset();
             session_destroy();
             include('index.php');
-            break;
+        break;
         case 'Unsubscribe':
             unsubscribe($_SESSION['userID']);
             include('index.php');
@@ -127,6 +126,14 @@ if($_POST['page'] == 'IndexPage') {
                 $profile_error_username = 'Username [' . $newUsername . '] is already taken';
                 include ('profile.php');
             }
+        break;
+        case 'UploadProfileImage':
+            upload_image($_SESSION['username']);
+            include('profile.php');
+        break;
+        case 'GetImage':
+            get_image($_SESSION['username']);
+        break;
     }
 }
 

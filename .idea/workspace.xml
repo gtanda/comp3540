@@ -22,10 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01be4ac6-64cb-4c08-8bcc-2796b17e979c" name="Default Changelist" comment="resource finished, search ability added">
+    <list default="true" id="01be4ac6-64cb-4c08-8bcc-2796b17e979c" name="Default Changelist" comment="finished ability to update username and password">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainpage.php" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profilemodel.php" beforeDir="false" afterPath="$PROJECT_DIR$/profilemodel.php" afterDir="false" />
     </list>
@@ -98,7 +97,8 @@
       <workItem from="1605041042227" duration="18906000" />
       <workItem from="1605320078852" duration="5395000" />
       <workItem from="1605470218645" duration="25076000" />
-      <workItem from="1605566677094" duration="8109000" />
+      <workItem from="1605566677094" duration="8267000" />
+      <workItem from="1605651056590" duration="9383000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit, finished login, signup so far">
       <created>1604802264679</created>
@@ -163,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605571339494</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="finished ability to update username and password">
+      <created>1605575152442</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1605575152442</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,21 +200,26 @@
     <MESSAGE value="working resource list finished" />
     <MESSAGE value="working resource list finished, comeback to add more touches possibly" />
     <MESSAGE value="resource finished, search ability added" />
-    <option name="LAST_COMMIT_MESSAGE" value="resource finished, search ability added" />
+    <MESSAGE value="finished ability to update username and password" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished ability to update username and password" />
   </component>
   <component name="WindowStateProjectService">
     <state x="94" y="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605477611640">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="94" y="708" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1605477611640" />
+    <state x="388" y="155" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605652295899">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="388" y="155" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1605652295899" />
     <state x="370" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605480126311">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="370" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1605480126311" />
-    <state x="1700" y="458" key="FileChooserDialogImpl" timestamp="1605566723356">
+    <state x="1700" y="458" key="FileChooserDialogImpl" timestamp="1605654121964">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1700" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1605566723356" />
+    <state x="1700" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1605654121964" />
     <state x="449" y="76" key="NewPhpClassDialog" timestamp="1605053236947">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -220,10 +232,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="829" y="70" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1604971071377" />
-    <state x="1511" y="436" key="Vcs.Push.Dialog.v2" timestamp="1605571344246">
+    <state x="1511" y="436" key="Vcs.Push.Dialog.v2" timestamp="1605575155945">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1511" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605571344246" />
+    <state x="1511" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605575155945" />
     <state x="246" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605475270583">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

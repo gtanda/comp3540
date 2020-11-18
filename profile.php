@@ -54,6 +54,8 @@ exit();
 
 <div class="container" style="padding-top: 2.5vh; border: 1px solid black;">
 
+<img src="" alt="" id="profile" style="display: none; border: 1px solid black; border-radius: 50%;">
+
 <button class="btn btn-danger" data-target="#modalUnsub" data-toggle="modal" style="margin: 1.2vh">Unsubscribe</button>
     <!-- Modal to join user -->
     <div class='modal fade' id='modalUnsub'>
@@ -85,7 +87,7 @@ exit();
         <input type='hidden' name='page' value='ProfilePage'>
         <input type='hidden' name='command' value='ChangeUsername'>
         <input type="text" name="newName" placeholder="Enter New Name" aria-label="Enter New Name" required>
-        <button class="btn btn-primary btn-sm">Submit new Name</button>
+        <button type="submit" class="btn btn-primary btn-sm">Submit new Name</button>
         <?php if(!empty($profile_error_username)) echo $profile_error_username;?>
     </form>
 
@@ -93,29 +95,49 @@ exit();
         <input type='hidden' name='page' value='ProfilePage'>
         <input type='hidden' name='command' value='ChangePassword'>
         <input type="password" name="newPassword" placeholder="Enter New Password" aria-label="Enter New Password" required>
-        <button class="btn btn-primary btn-sm">Submit new Password</button>
-
+        <button type="submit" class="btn btn-primary btn-sm">Submit new Password</button>
     </form>
 
+    <form action="controller.php" method="post" style="margin: 1.3vh" enctype="multipart/form-data">
+        <input type='hidden' name='page' value='ProfilePage'>
+        <input type='hidden' name='command' value='UploadProfileImage'>
+        <input type="file" name="profileImage" style="display: inline-block">
+        <button type="submit" class="btn btn-primary btn-sm">Upload Image</button>
+    </form>
 </div>
 
 
 
-
-
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
+
+
 
 <script>
     $('#logoutProfile').click(function(){
         $('#profileSignOut').submit();
     })
+
+
+    $(document).ready(function() {
+        $.post('controller.php', {
+            page: 'ProfilePage',
+            command: 'GetImage'
+        }, function(data) {
+            if(data.length > 2) {
+                let row = JSON.parse(data);
+                let imagePath = row[0].i_name;
+                let image = 'images/' + imagePath;
+                $('#profile').css('display', 'block').attr('src', image);
+            }
+        })
+    });
+
 </script>
+
 
 
 </body>
