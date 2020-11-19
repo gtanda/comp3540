@@ -22,11 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01be4ac6-64cb-4c08-8bcc-2796b17e979c" name="Default Changelist" comment="finished ability to update username and password">
+    <list default="true" id="01be4ac6-64cb-4c08-8bcc-2796b17e979c" name="Default Changelist" comment="photo upload/retrieval works, can't change photo yet">
+      <change afterPath="$PROJECT_DIR$/images/raptor.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainpage.php" beforeDir="false" afterPath="$PROJECT_DIR$/mainpage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profilemodel.php" beforeDir="false" afterPath="$PROJECT_DIR$/profilemodel.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +98,9 @@
       <workItem from="1605320078852" duration="5395000" />
       <workItem from="1605470218645" duration="25076000" />
       <workItem from="1605566677094" duration="8267000" />
-      <workItem from="1605651056590" duration="9383000" />
+      <workItem from="1605651056590" duration="10312000" />
+      <workItem from="1605821043627" duration="1979000" />
+      <workItem from="1605823134655" duration="581000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit, finished login, signup so far">
       <created>1604802264679</created>
@@ -170,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605575152442</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="photo upload/retrieval works, can't change photo yet">
+      <created>1605660623037</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1605660623037</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +210,8 @@
     <MESSAGE value="working resource list finished, comeback to add more touches possibly" />
     <MESSAGE value="resource finished, search ability added" />
     <MESSAGE value="finished ability to update username and password" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished ability to update username and password" />
+    <MESSAGE value="photo upload/retrieval works, can't change photo yet" />
+    <option name="LAST_COMMIT_MESSAGE" value="photo upload/retrieval works, can't change photo yet" />
   </component>
   <component name="WindowStateProjectService">
     <state x="94" y="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605477611640">
@@ -232,14 +242,18 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="829" y="70" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1604971071377" />
-    <state x="1511" y="436" key="Vcs.Push.Dialog.v2" timestamp="1605575155945">
+    <state x="1511" y="436" key="Vcs.Push.Dialog.v2" timestamp="1605660631720">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1511" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605575155945" />
+    <state x="1511" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605660631720" />
     <state x="246" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605475270583">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="246" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1605475270583" />
+    <state x="464" y="967" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605660584686">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="464" y="967" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1605660584686" />
     <state x="-7" y="700" width="1290" height="707" key="dock-window-1" timestamp="1603242545787">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -248,9 +262,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="296" y="159" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1604789805985" />
-    <state x="301" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1605484165075">
+    <state x="301" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1605823149265">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="301" y="145" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1605484165075" />
+    <state x="301" y="145" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1605823149265" />
   </component>
 </project>

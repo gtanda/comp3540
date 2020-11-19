@@ -131,7 +131,7 @@ exit();
                 let row = JSON.parse(data);
                 let imagePath = row[0].i_name;
                 let image = 'images/' + imagePath;
-                $('#profile').css('display', 'block').attr('src', image);
+                $('#profile').css('display', 'block').attr({'src': image, 'width': 250 + 'px', 'height': 250 + 'px'});
             }
         })
     });

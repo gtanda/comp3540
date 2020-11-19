@@ -290,7 +290,13 @@ if (!isset($_SESSION['SignIn'])) {
                     table += "<td><button class='btn btn-danger deleteItem'>Delete</button></td>";
 
                     for (let property in row[index]) {
-                        table += "<td>" + (row[index][property]) + "</td>";
+                        if(property === 'r_link'){
+                            let href_link = row[index].r_link;
+                            let link = "<a href= " + href_link + " target='_blank'>";
+                            table += "<td>" + link + row[index][property] + "<a/></td>";
+                        } else {
+                            table += "<td>" + (row[index][property]) + "</td>";
+                        }
                     }
                     table += "</tr>";
                 }
